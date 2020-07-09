@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:,">
+</head>
+
+<body>
+    <p id="hostElement"></p>
+
+    <script>
+        // create shadow DOM on the <p> element above
+        var shadow = document.querySelector('#hostElement').attachShadow({ mode: 'closed' }); // closed open
+        shadow.innerHTML = '<p>Here is some new text</p>';
+
+        console.log(document.querySelector('#hostElement').shadowRoot)
+    </script>
+</body>
+
+</html>
