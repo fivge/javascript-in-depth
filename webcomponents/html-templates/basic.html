@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="data:,">
+</head>
+
+<body>
+
+    <!-- template -->
+    <template id="my-paragraph-01">
+        <p>My paragraph 01</p>
+    </template>
+
+    <!-- template with ShadowDOM custom-elements -->
+    <template id="my-paragraph-02">
+        <style>
+            p {
+                color: white;
+                background-color: #666;
+                padding: 5px;
+            }
+        </style>
+        <p>My paragraph 02</p>
+    </template>
+
+    <my-paragraph-02></my-paragraph-02>
+
+    <!-- slot -->
+    <template id="my-paragraph-03">
+        <style>
+            p {
+                color: white;
+                background-color: #666;
+                padding: 5px;
+            }
+        </style>
+        <p>
+            <slot name="my-text">My default text</slot>
+        </p>
+    </template>
+
+
+    <my-paragraph-03>
+        <span slot="my-text">Let's have some different text!</span>
+    </my-paragraph-03>
+
+
+    <my-paragraph-03>
+        <ul slot="my-text">
+            <li>Let's have some different text!</li>
+            <li>In a list!</li>
+        </ul>
+    </my-paragraph-03>
+
+    <script src="./basic.js"></script>
+</body>
+
+</html>

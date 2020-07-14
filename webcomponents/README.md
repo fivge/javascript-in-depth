@@ -94,6 +94,12 @@ let shadow = this.attachShadow({ mode: "open" });
 
 ### HTML templates
 
+`<template>` `<slot>`
+
+<template> 元素及其内容不会在 DOM 中呈现，但仍可使用 JavaScript 去引用它
+
+<slot> 能在单个实例中通过声明式的语法展示不同的文本
+
 ### docs
 
 - [Web Components the Right Way](https://github.com/mateusortiz/webcomponents-the-right-way)
