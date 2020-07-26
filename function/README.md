@@ -1,4 +1,4 @@
-> bind apply
+> bind apply bind
 
 > new
 
@@ -17,3 +17,9 @@ Object.create()
 > `=>`
 
 > 闭包
+
+> 作用域
+
+> 作用域提升机制
+
+> 构造函数 IoC DI
