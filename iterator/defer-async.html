@@ -9,14 +9,27 @@
 </head>
 
 <body>
-
+    <script>
+        let start = new Date()
+        console.log("start", start.getSeconds(), start.getMilliseconds());
+    </script>
 
     <!-- <script async src="./defer-async.js"></script> -->
-    <!-- <script defer src="./defer-async.js"></script> -->
-    <script src="./defer-async.js"></script>
+    <script defer src="./defer-async.js"></script>
+    <!-- <script src="./defer-async.js"></script> -->
+    <!-- <script src="./defer-async.js" type="module"></script> -->
+
     <script>
+        let now = Date.now();
+        let isRun = true;
+        while (isRun) {
+            let time = Date.now();
+            if (time - now > 10000) {
+                isRun = false;
+            }
+        }
         let t = new Date()
-        console.log("init", t.getSeconds(), t.getMilliseconds());
+        console.log("load dom", t.getSeconds(), t.getMilliseconds());
     </script>
 </body>
 
