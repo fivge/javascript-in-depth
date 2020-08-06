@@ -8,6 +8,8 @@ for of
 
 indexOf
 
+pop() push() shift()
+
 > 字符串 string
 
 for()

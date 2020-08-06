@@ -45,3 +45,15 @@ console.log("load script", s.getSeconds(), s.getMilliseconds());
 > script defer
 
 ![](https://raw.githubusercontent.com/fivge/hexo-pic/master/2020/20200804103222.png)
+
+### async-await
+
+> Promise
+
+> async/await
+
+> 迭代器
+
+> settimeout
+
+> 宏队列 微队列
