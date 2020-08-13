@@ -8,14 +8,15 @@ let h = (...args) => {
       // 第一个 string 是标签
       // 第二个 string 是 innerText
       if (element) {
-        element.innerText = arg;
+        // element.innerText = arg;
+        element.append(arg);
       } else {
         element = document.createElement(arg);
       }
     } else if (typeof arg === "number" || typeof arg === "boolean") {
-      element.innerText = arg.toString();
+      element.append(arg.toString());
     } else if (arg instanceof Node) {
-      element.appendChild(arg);
+      element.append(arg);
     } else if (typeof arg === "object") {
       for (let item in arg) {
         if (typeof arg[item] === "string") {
@@ -41,7 +42,8 @@ console.log(h("h1", "hello!").outerHTML);
 // <a href="https://npm.im/hyperscript">hyperscript</a>
 console.log(
   // h("a", { href: "https://npm.im/hyperscript" }, "hyperscript").outerHTML
-  h("a", { foo: "bar" }, "hyperscript").outerHTML
+  // h("a", { foo: "bar" }, "hyperscript").outerHTML,
+  h("a", { class: "bar" }, "hyperscript").outerHTML
 );
 
 // <table>

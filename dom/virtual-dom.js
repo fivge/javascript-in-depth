@@ -5,22 +5,35 @@ class Element {
     this.children = children || [];
   }
   render() {
-    //这个函数是用来生成真实DOM的，最后会把return的结果添加到页面中去
+    let element = null;
+    element = document.createElement(this.tagName);
+
+    // attrs
+    for (let attr in this.attrs) {
+      // element[attr] = this.attrs[attr];
+      element.setAttribute(attr, this.attrs[attr]);
+    }
+
+    // children
+    this.children = this.children.map((item) =>
+      item instanceof Element ? item.render() : item
+    );
+
+    element.append(...this.children);
+
+    return element;
   }
 }
 
-/**
-<ul id="list">
-  <li class="a">txt_a</li>
-  <li class="a">txt_b</li>
-</ul>
-**/
-//根据上面结构可以用一下方式创建一棵 Virtual Dom Tree
+// <ul id="list">
+//   <li class="a">txt_a</li>
+//   <li class="a">txt_b</li>
+// </ul>
 let ul = new Element("ul", { id: "list" }, [
   new Element("li", { class: "a" }, ["txt_a"]),
   new Element("li", { class: "b" }, ["txt_b"]),
-]); //ul 就是一棵个Virtual Dom Tree
+]);
 
-let ulDom = ul.render(); //生成真实Dom
+let ulDom = ul.render();
 
-// document.body.appendChild(ulDom); //添加到页面中
+console.log(ulDom.outerHTML);
