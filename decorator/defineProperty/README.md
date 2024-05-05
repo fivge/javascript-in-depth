@@ -103,3 +103,11 @@ console.log(obj.property1);
 ---
 
 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+
+---
+
+缺点
+
+defineProperty
+
+TODO
